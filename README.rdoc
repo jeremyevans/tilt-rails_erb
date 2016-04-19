@@ -1,0 +1,35 @@
+= tilt-rails_erb
+
+tilt-rails_erb adds supports ERB templates using Rails' ERB handler,
+which is different than standard ERB in that it supports using
+<tt><%= foo do %><% end %></tt> syntax and it auto-escapes output.
+
+= Installation
+
+  gem install tilt-rails_erb
+
+= Source Code
+
+Source code is available on GitHub at https://github.com/jeremyevans/tilt-rails_erb
+
+= Usage
+
+  require 'tilt/rails_erb'
+
+The use case for tilt-rails_erb is in middleware in a Rails app that wants to share
+template files with the Rails app.  Rails uses a non-standard ERB processor, and
+supports syntax that standard ERB doesn't support.  If you use that syntax in your
+Rails templates and want to share the templates with a middleware that uses tilt
+for renderning, you should use this library.
+
+Note that this library makes the the Tilt::RailsERBTemplate the default Tilt
+.erb template handler, which can cause problems if you also use non-Rails ERB
+templates in the same application.
+
+= License
+
+MIT
+
+= Author
+
+Jeremy Evans <code@jeremyevans.net>
