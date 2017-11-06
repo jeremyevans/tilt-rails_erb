@@ -3,10 +3,10 @@ require 'tilt/template'
 require 'action_view'
 
 module Tilt
-  class RailsERBTemplate < ErubisTemplate
+  class RailsERBTemplate < ErubiTemplate
     protected
 
-    class Template < ActionView::Template::Handlers::Erubis
+    class Template < ActionView::Template::Handlers::ERB::Erubi
       def add_preamble(_)
         @newline_pending = 0
       end
@@ -16,6 +16,8 @@ module Tilt
       @outvar = options.delete(:outvar) || '@output_buffer'
       @options.merge!(:postamble => false, :bufvar => @outvar)
       @engine = Template.new(data, options)
+      @src = @engine.src.dup
+      @engine
     end
 
     def precompiled_preamble(locals)

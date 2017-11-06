@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'tilt-rails_erb'
-  s.version = '1.0.0'
+  s.version = '2.0.0'
   s.platform = Gem::Platform::RUBY
   s.license = "MIT"
   s.summary = "Adds support for Rails' ERB templates to Tilt"
@@ -13,7 +13,7 @@ tilt-rails_erb adds supports ERB templates using Rails' ERB handler,
 which is different than standard ERB in that it supports using
 <tt><%= foo do %><% end %></tt> syntax and it auto-escapes output.
 END
-  s.add_dependency('tilt')
-  s.add_dependency('actionpack', '>= 3.2.0')
+  s.add_dependency('tilt', '>=2.0.6')
+  s.add_dependency('actionview', '>= 5.1.0')
   s.add_development_dependency('minitest')
 end

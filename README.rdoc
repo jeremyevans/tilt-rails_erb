@@ -1,7 +1,7 @@
 = tilt-rails_erb
 
-tilt-rails_erb adds supports ERB templates using Rails' ERB handler,
-which is different than standard ERB in that it supports using
+tilt-rails_erb adds supports ERB templates using Rails' 5.1 Erubi-based ERB
+handler, which is different than standard ERB in that it supports using
 <tt><%= foo do %><% end %></tt> syntax and it auto-escapes output.
 
 = Installation
