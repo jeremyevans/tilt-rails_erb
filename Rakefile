@@ -12,7 +12,7 @@ end
 
 desc "Run tests"
 task :test do
-  sh "#{FileUtils::RUBY} -rubygems spec/tilt_rails_erb_spec.rb"
+  sh "#{FileUtils::RUBY} spec/tilt_rails_erb_spec.rb"
 end
 
 task :default => :test
