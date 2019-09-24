@@ -1,6 +1,5 @@
 $: << 'lib'
 ENV['MT_NO_PLUGINS'] = '1' # Work around stupid autoloading of plugins
-require 'minitest/spec'
 require 'minitest/autorun'
 require 'tilt'
 require 'tilt/rails_erb'
@@ -22,6 +21,6 @@ describe "tilt-rails_erb" do
   end
 
   it "renders the template returned by the indirection" do
-    Tilt.new('spec/template.erb').render(self).chomp.must_equal "t1[&lt;t2&gt;<t3>]t4"
+    assert_equal "t1[&lt;t2&gt;<t3>]t4", Tilt.new('spec/template.erb').render(self).chomp
   end
 end
