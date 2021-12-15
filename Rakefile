@@ -12,7 +12,7 @@ end
 
 desc "Run tests"
 task :test do
-  sh "#{FileUtils::RUBY} spec/tilt_rails_erb_spec.rb"
+  sh "#{FileUtils::RUBY} #{"-w" if RUBY_VERSION >= '3'} spec/tilt_rails_erb_spec.rb"
 end
 
 task :default => :test
